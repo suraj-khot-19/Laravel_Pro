@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 //home route
-Route::view('/',"welcome");
+Route::get('/',function(){
+    // return view('welcome');
+    //how to redirecting to some other page
+    return redirect('contact');
+});
 
 //contact route
 Route::view('/contact', "contact");
