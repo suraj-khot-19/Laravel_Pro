@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\DemoController;
 use Illuminate\Support\Facades\Route;
 
 //importing controller
 use App\Http\Controllers\user;
 
 //home route
-Route::get('/',function(){
+Route::get('/', function () {
     return view('welcome');
     //how to redirecting to some other page
     // return redirect('contact');
@@ -16,7 +17,7 @@ Route::get('/',function(){
 Route::view('/contact', "contact");
 
 //about route
-Route::view("/about","about");
+Route::view("/about", "about");
 
 /*
 
@@ -50,6 +51,8 @@ use App\Http\Controllers\user;
 Route::get('url', [ControllerClassName::class,"FunctionWhichYouWantToCall"] );
 
 */
-Route::get("user/{username}",[user::class,"printing"]);
+//passing data from url 
+Route::get("user/{username}", [user::class, "printing"]);
 
-
+//democontroller route
+Route::get("democ/{company}",[DemoController::class,"loadView"]);
