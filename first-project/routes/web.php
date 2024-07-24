@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\PhpExampleController;
 use Illuminate\Support\Facades\Route;
 
 //importing controller
@@ -55,4 +56,7 @@ Route::get('url', [ControllerClassName::class,"FunctionWhichYouWantToCall"] );
 Route::get("user/{username}", [user::class, "printing"]);
 
 //democontroller route
-Route::get("democ/{company}",[DemoController::class,"loadView"]);
+Route::get("democ/{company}", [DemoController::class, "loadView"]);
+
+//php code controller
+Route::get("php", [PhpExampleController::class, "loadView"]);
