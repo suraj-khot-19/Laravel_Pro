@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\PhpExampleController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,4 +63,10 @@ Route::get("democ/{company}", [DemoController::class, "loadView"]);
 Route::get("php", [PhpExampleController::class, "loadView"]);
 
 //blade code
-Route::view('/blade',"blade_code");
+Route::view('/blade', "blade_code");
+
+//routes for html form
+//1. one for controller
+Route::get("loginform", [HtmlFormController::class, "fetchData"]);
+//2. one for view
+Route::view('login', 'html_form');
