@@ -32,3 +32,17 @@
 @foreach ($arr as $value)
     <h5>{{ $value }}</h5>
 @endforeach
+
+<script>
+    //comming array
+    var x = @json($arr);
+    console.log("array:" + a);
+
+    //comming a
+    var a = @json($a);
+    console.log("a:" + a);
+    
+    //comming b
+    var b = @json($b);
+    console.log("b:" + b);
+</script>

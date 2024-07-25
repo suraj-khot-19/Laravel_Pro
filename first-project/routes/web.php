@@ -60,3 +60,6 @@ Route::get("democ/{company}", [DemoController::class, "loadView"]);
 
 //php code controller
 Route::get("php", [PhpExampleController::class, "loadView"]);
+
+//blade code
+Route::view('/blade',"blade_code");
