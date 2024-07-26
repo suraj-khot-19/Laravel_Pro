@@ -69,15 +69,22 @@ Route::view('/blade', "blade_code");
 //1. one for controller
 Route::get("loginform", [HtmlFormController::class, "fetchData"]);
 //2. one for view
-// Route::view('login', 'html_form');
+Route::view('login', 'html_form');
 
 //route for redirect page
-Route::view('redirect','redirect');
+Route::view('redirect', 'redirect');
 
 //route for group middleware
-Route::group(['middleware'=>['GroupMiddleware']],function(){
+Route::group(['middleware' => ['GroupMiddleware']], function () {
     //add any routes to add middleware to here
     Route::view('demo', 'groupmiddleware');
-
-    Route::view('login', 'html_form');
+    // Route::view('login', 'html_form');
 });
+
+
+
+// route midd..
+// Route::get("php", [PhpExampleController::class, "loadView"])->middleware('routemiddleware1');
+
+// can we add two middlewares for one view==>yessss
+// Route::view('/blade', "blade_code")->middleware('routemiddleware1', 'routemiddleware2');
