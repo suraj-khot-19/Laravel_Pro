@@ -70,3 +70,6 @@ Route::view('/blade', "blade_code");
 Route::get("loginform", [HtmlFormController::class, "fetchData"]);
 //2. one for view
 Route::view('login', 'html_form');
+
+//route for redirect page
+Route::view('redirect','redirect');
