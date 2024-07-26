@@ -10,7 +10,28 @@ This token is stored in the user’s session and changes each time the session i
 A malicious application cannot access this token because it’s tied to the user’s session. --}}
     {{-- if we not add csrf here then on submit "page expired" error is comming --}}
     @csrf
-    <input type="text" name="username" placeholder="enter name" /> <br><br>
-    <input type="password" name="password" placeholder="enter password" /> <br><br>
+
+    {{-- to display error  --}}
+    {{-- {{$errors}} --}}
+
+    {{-- @if ($errors->any())
+        @foreach ($errors->all() as $err)
+            <li>{{$err}}</li>
+        @endforeach
+    @endif --}}
+    <br>
+    <input type="text" name="username" value="{{ old('username') }}" placeholder="enter name" /> <br>
+    <span style="color: red">
+        @error('username')
+            {{ $message }}
+        @enderror
+    </span>
+    <br>
+    <input type="password" name="password" placeholder="enter password" /> <br>
+    <span style="color: red">
+        @error('password')
+            {{ $message }}
+        @enderror
+    </span><br>
     <button type="submit">Login</button>
 </form>
