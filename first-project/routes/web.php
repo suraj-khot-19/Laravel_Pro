@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HtmlFormController;
+use App\Http\Controllers\httpclientController;
 use App\Http\Controllers\mysqldb;
 use App\Http\Controllers\mysqldb2;
 use App\Http\Controllers\PhpExampleController;
@@ -96,3 +97,6 @@ Route::get('students',[mysqldb::class,'db']);
 
 //myysqldb2 (controller)
 Route::get('users', [mysqldb2::class, 'db']);
+
+//http client 
+Route::get('http',[httpclientController::class, 'fetchDataFrom']);
