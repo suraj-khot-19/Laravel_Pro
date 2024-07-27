@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HtmlFormController;
+use App\Http\Controllers\mysqldb;
 use App\Http\Controllers\PhpExampleController;
 use Illuminate\Support\Facades\Route;
 
@@ -88,3 +89,6 @@ Route::group(['middleware' => ['GroupMiddleware']], function () {
 
 // can we add two middlewares for one view==>yessss
 // Route::view('/blade', "blade_code")->middleware('routemiddleware1', 'routemiddleware2');
+
+//myysqldb (controller)
+Route::get('students',[mysqldb::class,'db']);
