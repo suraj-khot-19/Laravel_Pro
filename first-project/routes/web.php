@@ -3,6 +3,7 @@
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\mysqldb;
+use App\Http\Controllers\mysqldb2;
 use App\Http\Controllers\PhpExampleController;
 use Illuminate\Support\Facades\Route;
 
@@ -92,3 +93,6 @@ Route::group(['middleware' => ['GroupMiddleware']], function () {
 
 //myysqldb (controller)
 Route::get('students',[mysqldb::class,'db']);
+
+//myysqldb2 (controller)
+Route::get('users', [mysqldb2::class, 'db']);
