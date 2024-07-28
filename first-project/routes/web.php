@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HtmlFormController;
+use App\Http\Controllers\HTTpAllMethods;
 use App\Http\Controllers\httpclientController;
 use App\Http\Controllers\mysqldb;
 use App\Http\Controllers\mysqldb2;
@@ -100,3 +101,8 @@ Route::get('users', [mysqldb2::class, 'db']);
 
 //http client 
 Route::get('http',[httpclientController::class, 'fetchDataFrom']);
+
+//http all mehods
+Route::delete('userlog',[HTTpAllMethods::class,'methods']);
+//for login form
+Route::view('log', 'login_forms');
