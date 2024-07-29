@@ -9,7 +9,7 @@ class FlashSessionController extends Controller
     function addMember(Request $request)
     {
         $data = $request->input('username');
-        $request->session()->flash('user', $data);
+        // $request->session()->flash('user', $data);
         return redirect('flash');
     }
 }

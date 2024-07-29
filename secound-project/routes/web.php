@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 //welcome page
@@ -48,3 +49,9 @@ Route::view('flash', 'flash_session');
 
 //post route for flash session controller
 Route::post('addmember',[FlashSessionController::class, 'addMember']);
+
+//upload file view
+Route::view('upload','upload_file');
+
+//upload file controller
+Route::post('upload_controller',[UploadController::class, 'uploading']);
