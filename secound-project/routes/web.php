@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,9 @@ Route::get('/logout', function () {
     //and then redirect to login page
     return redirect('/login');
 });
+
+//flash session view
+Route::view('flash', 'flash_session');
+
+//post route for flash session controller
+Route::post('addmember',[FlashSessionController::class, 'addMember']);
