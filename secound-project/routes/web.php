@@ -4,6 +4,7 @@ use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 //welcome page
 Route::view('/', 'welcome');
@@ -48,10 +49,17 @@ Route::get('/logout', function () {
 Route::view('flash', 'flash_session');
 
 //post route for flash session controller
-Route::post('addmember',[FlashSessionController::class, 'addMember']);
+Route::post('addmember', [FlashSessionController::class, 'addMember']);
 
 //upload file view
-Route::view('upload','upload_file');
+Route::view('upload', 'upload_file');
 
 //upload file controller
-Route::post('upload_controller',[UploadController::class, 'uploading']);
+Route::post('upload_controller', [UploadController::class, 'uploading']);
+
+//localiztaion
+Route::get('lang/{la}', function ($la) {
+    //Set locale information
+    App::setlocale($la);
+    return view('locale_lang');
+});
