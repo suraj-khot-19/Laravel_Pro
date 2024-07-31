@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddMemebrController;
 use App\Http\Controllers\DbListController;
 use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
@@ -67,3 +68,9 @@ Route::get('lang/{la}', function ($la) {
 
 //for dblist controller
 Route::get('db', [DbListController::class, 'display']);
+
+// for adding members
+Route::view('add', 'add_member');
+
+//for adding member controller
+Route::post('adding', [AddMemebrController::class, 'addMember']);

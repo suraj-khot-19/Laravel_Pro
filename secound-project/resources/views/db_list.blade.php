@@ -23,6 +23,16 @@
 <span>
     {{ $data->links() }}
 </span>
+<span>
+
+{{-- //enabling bootstrap 5
+    {{ $data->links("pagination::bootstrap-5") }}
+</span>
+<span>
+
+//enabling bootstrap 4
+    {{ $data->links("pagination::bootstrap-4") }}
+</span> --}}
 
 {{-- to add basic css  --}}
 <style>
