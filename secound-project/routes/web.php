@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DbListController;
 use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
 use App\Http\Controllers\UploadController;
@@ -63,3 +64,6 @@ Route::get('lang/{la}', function ($la) {
     App::setlocale($la);
     return view('locale_lang');
 });
+
+//for dblist controller
+Route::get('db', [DbListController::class, 'display']);
