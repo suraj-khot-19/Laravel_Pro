@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddMemebrController;
 use App\Http\Controllers\DbListController;
+use App\Http\Controllers\DeleteDataController;
 use App\Http\Controllers\FlashSessionController;
 use App\Http\Controllers\LoginForm;
 use App\Http\Controllers\UploadController;
@@ -74,3 +75,8 @@ Route::view('add', 'add_member');
 
 //for adding member controller
 Route::post('adding', [AddMemebrController::class, 'addMember']);
+
+//delete member route
+Route::get('delete',[DeleteDataController::class, 'deleteData']);
+//for delete a href
+Route::get('deleting/{name}', [DeleteDataController::class, 'deleting']);
